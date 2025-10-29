@@ -4,9 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>SBA 2</title>
+    <title>Accessible Design Co.</title>
 </head>
 <body>
-    
+    <div class="site-wrapper">
+        <header class="site-header">
+            <div class="brand">
+                <a href="#home" class="brand-link">
+                    <img src="./img/logo.png" alt="Accessible Design Co. logo">
+                    <span class="brand-name">Accessible Design Co.</span>
+                </a>
+            </div>
+            <nav class="navbar" aria-label="Main navigation">
+                <ul id="primary-navigation" class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about-us">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main-content">
+            <article>
+                <section id="home" class="hero" aria-labelledby="hero-heading">
+                    <div class="hero-content">
+                        <h1 id="hero-heading">We make stuff look nice</h1>
+                        <p class="hero-tagline">
+                            Accessible Design Co. is a handful of folks who obsess over making websites work for actual humans.
+                            No glitter, no jargon, just stuff you can click without cursing.
+                        </p>
+                        <a class="button button--primary" href="#contact">Tell us what hurts</a>
+                    </div>
+                    <figure class="hero-figure">
+                        <img src="./img/flat-world-graphics-day-illustration_23-2148880103.jpg" alt="A colorful depiction saying graphics day">
+                    </figure>
+                </section>
+                <section id="about-us" class="about" aria-labelledby="about-heading">
+                    <div class="section-header">
+                        <h2 id="about-heading">About Accessible Design Co.</h2>
+                        <p class="section-intro">
+                            We are a tiny studio that likes sticky notes, coffee that is probably too strong,
+                            and shipping projects that don&rsquo;t leave anyone behind.
+                        </p>
+                    </div>
+                    <div class="about-grid">
+                        <article class="about-card">
+                            <h3>Inclusive by default</h3>
+                            <p>
+                                We run every sketch by screen readers, color contrast checkers, and our friend Sam
+                                who always finds the one button nobody else noticed.
+                            </p>
+                        </article>
+                        <article class="about-card">
+                            <h3>Human-centered process</h3>
+                            <p>
+                                We interview, doodle, test, throw things out, then test again until the flow just feels right.
+                                Nobody wants to fight a form at 2&nbsp;AM.
+                            </p>
+                        </article>
+                        <article class="about-card">
+                            <h3>Measurable outcomes</h3>
+                            <p>
+                                Cleaner analytics, happier customers, fewer legal headaches. Toss in a calmer support inbox too.
+                            </p>
+                        </article>
+                    </div>
+                </section>
+                <section id="services" class="services" aria-labelledby="services-heading">
+                    <div class="section-header">
+                        <h2 id="services-heading">What we actually do</h2>
+                        <p class="section-intro">
+                            Think of us as the accessibility buddy who shows up with snacks and honest feedback.
+                        </p>
+                    </div>
+                    <div class="services-grid" role="list">
+                        <article class="service-card" role="listitem">
+                            <img src="./img/accessibility.png" alt="An image of the accessibility symbol">
+                            <h3>Accessibility audits</h3>
+                            <p>
+                                We make sure your product is accessibile.
+                            </p>
+                        </article>
+                        <article class="service-card" role="listitem">
+                            <img src="./img/inclusive-design.png" alt="Image of people with disabilities for inclusive design">
+                            <h3>Inclusive UX design</h3>
+                            <p>
+                                Low-fi sketches, messy drafts, and eventually screens your team can build without crying.
+                            </p>
+                        </article>
+                        <article class="service-card" role="listitem">
+                            <img src="./img/team-training.png" alt="Image of a person point towards a teaching board for training sessions">
+                            <h3>Team training</h3>
+                            <p>
+                                We hang out with your crew, share what works, and answer the weird questions nobody wants to ask in a big meeting.
+                            </p>
+                        </article>
+                    </div>
+                </section>
+                <section id="contact" class="contact" aria-labelledby="contact-heading">
+                    <div class="section-header">
+                        <h2 id="contact-heading">Let&rsquo;s fix the annoying stuff</h2>
+                        <p class="section-intro">
+                            Drop a note below. We&rsquo;ll reply faster than your last help-desk ticket.
+                        </p>
+                    </div>
+                    <form class="contact-form" aria-describedby="contact-instructions">
+                        <p id="contact-instructions">
+                            All fields are required unless marked optional. We keep your secrets safe and never spam.
+                        </p>
+                        <fieldset>
+                            <legend>Contact information</legend>
+                            <div class="form-field">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-help">
+                                <span id="name-help" class="field-help">Enter your full name.</span>
+                            </div>
+                            <div class="form-field">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-help">
+                                <span id="email-help" class="field-help">We&rsquo;ll only use this to reply to your message.</span>
+                            </div>
+                            <div class="form-field">
+                                <label for="subject">Subject <span class="optional">(optional)</span></label>
+                                <input type="text" id="subject" name="subject" aria-describedby="subject-help">
+                                <span id="subject-help" class="field-help">Share a short summary of what you need.</span>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Project details</legend>
+                            <div class="form-field">
+                                <label for="message">How can we help?</label>
+                                <textarea id="message" name="message" rows="5" required aria-describedby="message-help"></textarea>
+                                <span id="message-help" class="field-help">Include any timelines or accessibility goals.</span>
+                            </div>
+                        </fieldset>
+                        <div class="form-actions">
+                            <button type="submit" class="button button--secondary">
+                                Submit message
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </article>
+        </main>
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; <span aria-label="copyright"></span> 2025 Accessible Design Co. All rights reserved.</p>
+                <address>
+                    <span>Contact us: </span>
+                    <a href="tel:1231231234">(123) 123-1234</a>
+                    <span aria-hidden="true"> · </span>
+                    <a href="mailto:hello@accessibledesign.co">hello@accessibledesign.co</a>
+                </address>
+                <nav aria-label="Social media">
+                    <ul class="footer-social">
+                        <li><a href="#linkedin">LinkedIn</a></li>
+                        <li><a href="#instagram">Instagram</a></li>
+                        <li><a href="#twitter">X (Twitter)</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
